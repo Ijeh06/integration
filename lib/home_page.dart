@@ -12,9 +12,7 @@ class HomePage extends StatelessWidget {
 
   //get teams
   Future getTeams() async {
-    var response = await http.get(
-      Uri.https('https://api.balldontlie.io/v1/teams'),
-    );
+    var response = await http.get(Uri.https('balldontlie.io', 'api/v1/teams'));
     var jsonData = jsonDecode(response.body);
 
     for (var eachTeam in jsonData['data']) {
